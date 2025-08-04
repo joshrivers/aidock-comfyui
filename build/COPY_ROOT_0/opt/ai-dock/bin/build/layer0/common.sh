@@ -1,5 +1,7 @@
 #!/bin/false
 
+set -x
+
 source /opt/ai-dock/etc/environment.sh
 
 build_common_main() {
@@ -25,7 +27,7 @@ build_common_create_venv() {
     "$COMFYUI_VENV_PYTHON" -m ipykernel install \
         --name="python3" \
         --display-name="Python3 (ipykernel)"
-    
+
     # API venv
     "python${PYTHON_VERSION}" -m venv "$API_VENV"
     "$API_VENV_PIP" install --no-cache-dir \
